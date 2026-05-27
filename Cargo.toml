@@ -1,0 +1,18 @@
+[package]
+name = "rustvani-vad"
+version = "0.1.0"
+edition = "2021"
+description = "Pure Rust Silero VAD — zero ONNX runtime, bundled weights, SIMD-accelerated inference"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/AJV009/rustvani"
+keywords = ["vad", "voice-activity-detection", "silero", "audio", "speech"]
+categories = ["multimedia::audio", "science"]
+include = ["src/**/*", "models/silero_vad_16k.bin", "Cargo.toml", "README.md", "LICENSE*"]
+
+[features]
+default = []
+tokio = ["dep:tokio"]
+
+[dependencies]
+log = "0.4"
+tokio = { version = "1", features = ["rt"], optional = true }
